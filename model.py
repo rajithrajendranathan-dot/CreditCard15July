@@ -43,7 +43,7 @@ def build_pipeline() -> Pipeline:
     categorical_pipeline = Pipeline(
         [
             ("imputer", SimpleImputer(strategy="most_frequent", fill_value="Missing")),
-            ("onehot", OneHotEncoder(handle_unknown="ignore", sparse=False)),
+            ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
         ]
     )
     numerical_pipeline = Pipeline(
